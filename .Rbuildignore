@@ -1,0 +1,15 @@
+^.*\.Rproj$
+^\.Rproj\.user$
+^.*\.Rout$
+^_pkgdown\.yml$
+^doc$
+^Meta$
+^temp$
+^temp.Rcheck$
+^examples_i386$
+^examples_x64$
+^tests_i386$
+^tests_x64$
+^LICENSE\.md$
+^README\.Rmd$
+^README\.html$

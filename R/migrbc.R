@@ -1,0 +1,31 @@
+#' @title A package for classifying border crossings using a rules-based 
+#'  methodology.
+#'
+#' @description The migrbc package provides five categories of 
+#' important functions:
+#' \code{run_rbc}, \code{pre_process}, \code{plot_mig_hist}, \code{resolve_data}
+#'  and \code{resolve_data_with_error}. In among of the five functions, 
+#'  \code{run_rbc} is the main entry function of the package.
+#' Two functions: \code{pre_process} and \code{plot_mig_hit}
+#'  are utility functions. 
+#' The rest functions \code{resolve_data} and
+#'  \code{resolve_data_with_error} are 
+#' the key functions to do the rules based classification.
+#' 
+#' @section \code{\link[migrbc]{run_rbc}} function:
+#' The run_rbc function attempt to determine long-term migration statuses, 
+#'  and pre-crossing and post-crossing residence statuses, for all crossings
+#'  where these statuses are not known.
+#' @section \code{\link[migrbc]{pre_process}} function:
+#'  This function provides a mechanism to divide large data into small chunks.
+#' @section \code{\link[migrbc]{plot_mig_hist}} function:
+#' Given a sequence of border crossings for a person, draw a diagram describing
+#'  that person's migration history
+#' @section \code{\link[migrbc]{resolve_data}} function:
+#' This function is the key function to do the rules based classification.
+#' @section \code{\link[migrbc]{resolve_data_with_error}} function:
+#' This function is used to produce error result.
+#' @docType package
+#' @name migrbc
+NULL
+
