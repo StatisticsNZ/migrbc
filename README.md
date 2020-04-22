@@ -8,6 +8,7 @@ Package `migrbc` provides mechanisms for classifying border crossings using a ru
 ### Installation
 
 Install development version from github:
+
 `devtools::install_github("StatisticsNZ/migrbc")`
 
 ### Documentation
@@ -16,9 +17,6 @@ Webpage URL:
 
 https://github.com/StatisticsNZ/migrbc/doc/migrbc.pdf
 
-R vignette:
-
-`vignette("migrbc", "migrbc")`
 
 ---
 __Copyright and Licensing__
