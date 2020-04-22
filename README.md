@@ -15,7 +15,7 @@ Install development version from github:
 
 Webpage URL:
 
-https://github.com/StatisticsNZ/migrbc/doc/migrbc.pdf
+https://github.com/StatisticsNZ/migrbc/tree/master/doc/migrbc.pdf
 
 
 ---
