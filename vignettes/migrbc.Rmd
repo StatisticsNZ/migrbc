@@ -301,7 +301,7 @@ dur_ws <- 487
 If we prefer to process it by a `csv` file (not provided by the 'migrbc'), which contains all required columns:
 
 ```{r}
-## genereate test data
+## generate test data
 person_temp <- migrbc::setup_random_test_data(number_of_people, 
                                               initial_date = "2001-01-01", 
                                               numJourneys = 10,

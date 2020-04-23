@@ -61,7 +61,7 @@ crossings where these statuses are not known.
 }
 \examples{
 
-## genereate test data 100 people and each person has 
+## generate test data 100 people and each person has 
 ## 10 journeys
 number_of_people <- 100
 person_data <- migrbc::setup_random_test_data(

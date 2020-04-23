@@ -198,7 +198,7 @@ dur_threshold_year <- 365
 dur_ws <- 487
 
 ## ---------------------------------------------------------------------------------------------------------------------------------------------------
-## genereate test data
+## generate test data
 person_temp <- migrbc::setup_random_test_data(number_of_people, 
                                               initial_date = "2001-01-01", 
                                               numJourneys = 10,
