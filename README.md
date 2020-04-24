@@ -7,11 +7,11 @@ Package `migrbc` provides mechanisms for classifying border crossings using a ru
 
 The main functions are:
 
-* `run_rbc`: determine long-term migration statuses, and pre-crossing and post-crossing residence statuses, for all crossings where these statuses are not known.
+* `run_rbc`: determines long-term migration statuses, and pre-crossing and post-crossing residence statuses, for all crossings where these statuses are not known.
 
 * `pre_process`: provides a mechanism to divide large data into small chunks.
 
-* `plot_mig_hist*`: given a sequence of border crossings for a person, draw a diagram describing that person's migration history.
+* `plot_mig_hist*`: by given a sequence of border crossings for a person, draw a diagram describing that person's migration history.
 
 ### Installation
 
