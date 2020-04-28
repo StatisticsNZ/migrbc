@@ -5,19 +5,20 @@ Version: 2.0.8
 URL: https://github.com/StatisticsNZ/migrbc
 BugReports: https://github.com/StatisticsNZ/migrbc/issues
 Language: en-US
-Authors@R: c(
+Authors@R:
+    c(
       person(given = "Leshi",
              family = "Chen",
   	         email = "Leshi.Chen@stats.govt.nz",
-  	         role = c("cre", "aut")),
+  	         role = c("aut", "cre")),
   	  person(given = "Pubudu",
              family = "Senanayake",
              email = "Pubudu.Senanayake@stats.govt.nz",
-	           role = "aut"),
+	           role = c("aut")),
 	    person(given = "Del",
              family = "Robinson",
              email = "Del.Robinson@stats.govt.nz",
-	           role = "aut"),
+	           role = c("aut")),
 	    person("Statistics New Zealand", 
              role = c("cph")))
 Description: Package `migrbc` provides mechanisms for classifying border crossings using a rules-based methodology. The goal of performing this type of classification is to identify any potential long-term migrants.  A long-term migration is defined as a border crossing involving a change in residence status. A border crossing counts as a long-term migration to/from a country if it entails a change from non-residence to residence / residence to non-residence.  The rules-based classification that used to determine a long-term migration is defined by a threshold duration and a test duration, alternatively named window size. Under a "12/16" rule, for instance, the threshold duration is 12 months and the test duration (window size) is 16 months. With a "9/12" rule, the threshold duration is 9 months and the test duration (window size)  is 12 months.
