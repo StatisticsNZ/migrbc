@@ -4,24 +4,20 @@ author: "Leshi Chen, Del Robinson, and Pubudu Senanayake"
 affiliation: Stats NZ
 date: "`r Sys.Date()`"
 keywords: "RRC, Rules Based Classification, Migration Statistics"
-output: rmarkdown::pdf_document
+output: rmarkdown::html_vignette
 geometry: margin=1in
 fontfamily: mathpazo
 fontsize: 11pt
 spacing: double
 endnote: no
 vignette: >
-  %\VignetteIndexEntry{P}
+  %\VignetteIndexEntry{migrbc}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
 
 ```{r setup, include = FALSE}
-options(tinytex.verbose = TRUE)
 knitr::opts_chunk$set(
-  cache = FALSE,
-  message = FALSE,
-  warning = FALSE,
   collapse = TRUE,
   comment = "#>"
 )

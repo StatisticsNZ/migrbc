@@ -30,19 +30,18 @@ LazyData: true
 Depends:
     R (>= 3.5)
 Imports:
-    Rcpp,
-    lubridate,
+    Rcpp (>= 1.0),
+    lubridate (>= 1.7),
+    stringr (>= 1.4),
+    dplyr (>= 0.8),
     methods,
-    stringr,
-    dplyr,
-    parallel
+    parallel,
+    futile.logger
 Suggests:  
     magrittr,
     tools,
     knitr,
-    tinytex,
     rmarkdown,
-    futile.logger,
     testthat
 RoxygenNote: 6.1.1
 Collate: 

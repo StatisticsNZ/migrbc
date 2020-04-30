@@ -31,7 +31,7 @@ install.packages("migrbc")
 
 Vignettes PDF URL:
 
-https://github.com/StatisticsNZ/migrbc/tree/master/doc/migrbc.pdf
+https://github.com/StatisticsNZ/migrbc/tree/master/doc/migrbc.html
 
 
 ---
