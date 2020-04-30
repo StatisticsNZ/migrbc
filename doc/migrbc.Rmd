@@ -254,7 +254,7 @@ library(parallel)
 ```
 
 ## Setting up a Logger (Optional)
-We applied futile.logger for troubleshooting and hence, provided an utility function for initializing the logger. More information about the logger can be found with the link (https://cran.r-project.org/web/packages/futile.logger/futile.logger.pdf). The parameter log_level is a number in the set of 1, 2, 4, 6, 8, and 9:
+We applied futile.logger for troubleshooting and hence, provided an utility function for initializing the logger. More information about the logger can be found with the link (https://CRAN.R-project.org/package=futile.logger). The parameter log_level is a number in the set of 1, 2, 4, 6, 8, and 9:
 ```
 futile.logger::FATAL: 1
 futile.logger::ERROR: 2
