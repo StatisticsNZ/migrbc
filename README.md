@@ -29,7 +29,7 @@ install.packages("migrbc")
 ```
 ### Documentation
 
-https://github.com/StatisticsNZ/migrbc/tree/master/docs
+https://statisticsnz.github.io/migrbc/
 
 ---
 __Copyright and Licensing__
