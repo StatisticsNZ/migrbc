@@ -29,10 +29,7 @@ install.packages("migrbc")
 ```
 ### Documentation
 
-Vignettes PDF URL:
-
-https://github.com/StatisticsNZ/migrbc/tree/master/doc/migrbc.html
-
+https://github.com/StatisticsNZ/migrbc/tree/master/docs
 
 ---
 __Copyright and Licensing__
