@@ -2,8 +2,8 @@ Package: migrbc
 Type: Package
 Title: Production Rules Based Classification of Migration
 Version: 2.0.8
-URL: https://github.com/StatisticsNZ/migrbc
-BugReports: https://github.com/StatisticsNZ/migrbc/issues
+URL: https://github.com/statisticsnz/migrbc
+BugReports: https://github.com/statisticsnz/migrbc/issues
 Language: en-US
 Authors@R:
     c(
@@ -13,11 +13,11 @@ Authors@R:
   	         role = c("aut", "cre")),
   	  person(given = "Pubudu",
              family = "Senanayake",
-             email = "Pubudu.Senanayake@stats.govt.nz",
+             email = "pubudu.senanayake@stats.govt.nz",
 	           role = c("aut")),
 	    person(given = "Del",
              family = "Robinson",
-             email = "Del.Robinson@stats.govt.nz",
+             email = "del.robinson@stats.govt.nz",
 	           role = c("aut")),
 	    person("Statistics New Zealand", 
              role = c("cph")))
