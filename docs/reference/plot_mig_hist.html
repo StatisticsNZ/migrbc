@@ -223,13 +223,13 @@ Defaults to 1.</p></td>
                                               <span class='kw'>numJourneys</span> <span class='kw'>=</span> <span class='fl'>3</span>,
                                               <span class='kw'>min</span> <span class='kw'>=</span> <span class='fl'>0</span>,
                                              <span class='kw'>max</span> <span class='kw'>=</span> <span class='fl'>100</span>)
-<span class='no'>cross_spaces</span> <span class='kw'>&lt;-</span> <span class='kw pkg'>migrbc</span><span class='kw ns'>::</span><span class='fu'><a href='pre_process.html'>pre_process</a></span>(<span class='no'>person_data</span>, <span class='kw'>n_groups</span> <span class='kw'>=</span> <span class='fl'>1</span>)</div><div class='output co'>#&gt; INFO [2020-05-01 13:55:06] entering 'pre_process' :
-#&gt; INFO [2020-05-01 13:55:06] leaving 'pre_process' : 
+<span class='no'>cross_spaces</span> <span class='kw'>&lt;-</span> <span class='kw pkg'>migrbc</span><span class='kw ns'>::</span><span class='fu'><a href='pre_process.html'>pre_process</a></span>(<span class='no'>person_data</span>, <span class='kw'>n_groups</span> <span class='kw'>=</span> <span class='fl'>1</span>)</div><div class='output co'>#&gt; INFO [2020-05-01 14:58:10] entering 'pre_process' :
+#&gt; INFO [2020-05-01 14:58:10] leaving 'pre_process' : 
 #&gt;               return 1 groups of raw data.</div><div class='input'><span class='co'>## run in non-parallel</span>
 <span class='no'>post_data</span> <span class='kw'>&lt;-</span> <span class='kw pkg'>migrbc</span><span class='kw ns'>::</span><span class='fu'><a href='run_rbc.html'>run_rbc</a></span>(<span class='no'>cross_spaces</span>,
                        <span class='kw'>window_size</span> <span class='kw'>=</span> <span class='fl'>487</span>,
                        <span class='kw'>threshold_year</span> <span class='kw'>=</span> <span class='fl'>365</span>,
-                       <span class='kw'>parallel</span><span class='kw'>=</span><span class='fl'>FALSE</span>)</div><div class='output co'>#&gt; INFO [2020-05-01 13:55:06] entering 'run_rbc' :
+                       <span class='kw'>parallel</span><span class='kw'>=</span><span class='fl'>FALSE</span>)</div><div class='output co'>#&gt; INFO [2020-05-01 14:58:10] entering 'run_rbc' :
 #&gt;                            window_size = 487, 
 #&gt;                            threshold_year = 365, 
 #&gt;                            parallel = FALSE, 
@@ -237,13 +237,13 @@ Defaults to 1.</p></td>
 #&gt;                            max_ram = 2,
 #&gt;                            include_error_columns = FALSE,
 #&gt;                            mc.cleanup = FALSE
-#&gt; INFO [2020-05-01 13:55:06] entering 'resolve_data' :
-#&gt; INFO [2020-05-01 13:55:06] Running without parallel
-#&gt; INFO [2020-05-01 13:55:06] entering 'resolve_data, chunk =1':
+#&gt; INFO [2020-05-01 14:58:10] entering 'resolve_data' :
+#&gt; INFO [2020-05-01 14:58:10] Running without parallel
+#&gt; INFO [2020-05-01 14:58:10] entering 'resolve_data, chunk =1':
 #&gt;                window_size=487, 
 #&gt;                threshold_year=365
-#&gt; INFO [2020-05-01 13:55:06] leaving 'resolve_data' :
-#&gt; INFO [2020-05-01 13:55:06] leaving 'run_rbc'</div><div class='input'><span class='no'>old_par</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/graphics/par.html'>par</a></span>(<span class='kw'>mfrow</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='fl'>1</span>, <span class='fl'>1</span>))
+#&gt; INFO [2020-05-01 14:58:10] leaving 'resolve_data' :
+#&gt; INFO [2020-05-01 14:58:10] leaving 'run_rbc'</div><div class='input'><span class='no'>old_par</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/graphics/par.html'>par</a></span>(<span class='kw'>mfrow</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='fl'>1</span>, <span class='fl'>1</span>))
 <span class='fu'>plot_test</span>(<span class='no'>post_data</span>$<span class='no'>journeys</span>)</div><div class='img'><img src='plot_mig_hist-1.png' alt='' width='700' height='433' /></div><div class='input'><span class='fu'><a href='https://rdrr.io/r/graphics/par.html'>par</a></span>(<span class='no'>old_par</span>)</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">

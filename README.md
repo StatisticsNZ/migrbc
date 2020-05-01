@@ -14,21 +14,13 @@ The main functions are:
 * `plot_mig_hist*`: by given a sequence of border crossings for a person, draw a diagram describing that person's migration history.
 
 ### Installation
+#### Install development version `migrbc` from github:
+devtools::install_github("StatisticsNZ/migrbc")
 
-Install development version `migrbc` from github:
+#### Install stable version `migrbc` from CRAN: 
+devtools::install.packages("migrbc")
 
-```{r, echo = FALSE}
-library(devtools)
-install_github("StatisticsNZ/migrbc")
-```
-
-Install stable version `migrbc` from CRAN: 
-
-```{r, echo = FALSE}
-install.packages("migrbc")
-```
 ### Documentation
-
 https://statisticsnz.github.io/migrbc/
 
 ---
