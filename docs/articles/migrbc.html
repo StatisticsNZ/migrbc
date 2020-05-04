@@ -76,7 +76,7 @@
       <h1 data-toc-skip>Rules Based Classification for Migration</h1>
                         <h4 class="author">Leshi Chen, Del Robinson, and Pubudu Senanayake</h4>
             
-            <h4 class="date">2020-05-01</h4>
+            <h4 class="date">2020-05-04</h4>
       
       <small class="dont-index">Source: <a href="https://github.com/statisticsnz/migrbc/blob/master/vignettes/migrbc.Rmd"><code>vignettes/migrbc.Rmd</code></a></small>
       <div class="hidden name"><code>migrbc.Rmd</code></div>
@@ -88,7 +88,7 @@
 <div id="introduction" class="section level1">
 <h1 class="hasAnchor">
 <a href="#introduction" class="anchor"></a>Introduction</h1>
-<p>Package <code>migrbc</code> provides mechanisms for classifying border crossings using a rules-based methodology. The goal of performing this type of classification is to identify any potential long-term migrants. A long-term migration is defined as a border crossing involving a change in residence status. A border crossing counts as a long-term migration to/from a country if it entails a change from non-residence to residence or residence to non-residence. The rules-based classification that used to determine a long-term migration is defined by a threshold duration and a test duration, alternatively named window size. Under a “12/16” rule, for instance, the threshold duration is 12 months and the test duration (window size) is 16 months. With a “9/12” rule, the threshold duration is 9 months and the test duration (window size) is 12 months. This vignette demonstrates the use of the functions, by calculating the days of residence and migration statuses, with a small made-up set of border crossings.</p>
+<p>This package provides mechanisms for classifying border crossings using a rules-based methodology. The goal of performing this type of classification is to identify any potential long-term migrants. A long-term migration is defined as a border crossing involving a change in residence status. A border crossing counts as a long-term migration to/from a country if it entails a change from non-residence to residence or residence to non-residence. The rules-based classification that used to determine a long-term migration is defined by a threshold duration and a test duration, alternatively named window size. Under a “12/16” rule, for instance, the threshold duration is 12 months and the test duration (window size) is 16 months. With a “9/12” rule, the threshold duration is 9 months and the test duration (window size) is 12 months. This vignette demonstrates the use of the functions, by calculating the days of residence and migration statuses, with a small made-up set of border crossings. For more information about the methodology applied, please visit Stats NZ (2020) <a href="https://www.stats.govt.nz/methods/defining-migrants-using-travel-histories-and-the-1216-month-rule" class="uri">https://www.stats.govt.nz/methods/defining-migrants-using-travel-histories-and-the-1216-month-rule</a>.</p>
 </div>
 <div id="outcome-based-rules-for-classifying-migration" class="section level1">
 <h1 class="hasAnchor">
@@ -500,35 +500,35 @@ futile.logger::TRACE: 9</code></pre>
 <td align="right">2</td>
 <td align="right">1</td>
 <td align="right">0</td>
-<td align="left">2001-01-23</td>
+<td align="left">2001-01-03</td>
 <td align="right">2</td>
 </tr>
 <tr class="odd">
 <td align="right">3</td>
 <td align="right">1</td>
 <td align="right">1</td>
-<td align="left">2001-03-03</td>
+<td align="left">2001-01-12</td>
 <td align="right">3</td>
 </tr>
 <tr class="even">
 <td align="right">4</td>
 <td align="right">1</td>
 <td align="right">0</td>
-<td align="left">2001-04-24</td>
+<td align="left">2001-02-08</td>
 <td align="right">4</td>
 </tr>
 <tr class="odd">
 <td align="right">5</td>
 <td align="right">1</td>
 <td align="right">1</td>
-<td align="left">2001-06-18</td>
+<td align="left">2001-03-11</td>
 <td align="right">5</td>
 </tr>
 <tr class="even">
 <td align="right">6</td>
 <td align="right">1</td>
 <td align="right">0</td>
-<td align="left">2001-09-04</td>
+<td align="left">2001-04-14</td>
 <td align="right">6</td>
 </tr>
 </tbody>

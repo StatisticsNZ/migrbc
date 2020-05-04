@@ -3,7 +3,7 @@
 
 ### Introduction
 
-Package `migrbc` provides mechanisms for classifying border crossings using a rules-based methodology. The goal of performing this type of classification is to identify any potential long-term migrants. A long-term migration is defined as a border crossing involving a change in residence status. A border crossing counts as a long-term migration to/from a country if it entails a change from non-residence to residence or residence to non-residence. The rules-based classification that used to determine a long-term migration is defined by a threshold duration and a test duration, alternatively named window size. Under a "12/16" rule, for instance, the threshold duration is 12 months and the test duration (window size) is 16 months. With a "9/12" rule, the threshold duration is 9 months and the test duration (window size)  is 12 months. 
+This package provides mechanisms for classifying border crossings using a rules-based methodology. The goal of performing this type of classification is to identify any potential long-term migrants. A long-term migration is defined as a border crossing involving a change in residence status. A border crossing counts as a long-term migration to/from a country if it entails a change from non-residence to residence or residence to non-residence. The rules-based classification that used to determine a long-term migration is defined by a threshold duration and a test duration, alternatively named window size. Under a "12/16" rule, for instance, the threshold duration is 12 months and the test duration (window size) is 16 months. With a "9/12" rule, the threshold duration is 9 months and the test duration (window size)  is 12 months. For more information about the methodology applied, please visit Stats NZ (2020) <https://www.stats.govt.nz/methods/defining-migrants-using-travel-histories-and-the-1216-month-rule>.
 
 The main functions are:
 
@@ -14,7 +14,7 @@ The main functions are:
 * `plot_mig_hist*`: by given a sequence of border crossings for a person, draw a diagram describing that person's migration history.
 
 ### Installation
-#### Install development version `migrbc` from github:
+#### Install development version `migrbc` from GitHub:
 devtools::install_github("StatisticsNZ/migrbc")
 
 #### Install stable version `migrbc` from CRAN: 
