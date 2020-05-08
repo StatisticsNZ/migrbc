@@ -2,7 +2,7 @@
 % Please edit documentation in R/utility_functions.R
 \name{get_object_size}
 \alias{get_object_size}
-\title{A function to check the size of an object}
+\title{Get Object Size}
 \usage{
 get_object_size(object)
 }
@@ -10,10 +10,11 @@ get_object_size(object)
 \item{object}{The target object.}
 }
 \value{
-A named list object.
+A named list object that contains information on the 
+ size of an object and the size unit.
 }
 \description{
-A function to check the size of an object
+A function to get the size of an object
 }
 \examples{
 res <- get_object_size(TRUE)

@@ -3,6 +3,7 @@ knitr::opts_chunk$set(
   collapse = TRUE,
   comment = "#>"
 )
+oldoption <- options(width = 999)
 options(width = 150)
 
 ## ----eval = FALSE-----------------------------------------------------------------------------------------------------------------------------------
@@ -172,6 +173,7 @@ library(knitr)
 library(parallel)
 
 ## ---------------------------------------------------------------------------------------------------------------------------------------------------
+## to suppresse log messages to the console
 log_level <- 1
 log_path <- NULL
 migrbc::initialize_logger(log_level = log_level,
@@ -323,4 +325,7 @@ post_data <- migrbc::run_rbc(person_data,
 old_par <- par(mfrow = c(1, 1))
 plot_test(post_data$journeys)
 par(old_par)
+
+## ----include = FALSE-----------------------------------------------------
+options(oldoption)
 

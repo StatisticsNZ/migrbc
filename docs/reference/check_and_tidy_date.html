@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Validate dates — check_and_tidy_date • migrbc</title>
+<title>Validate general dates — check_and_tidy_date • migrbc</title>
 
 <!-- jquery -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
@@ -36,9 +36,10 @@
 
 
 
-<meta property="og:title" content="Validate dates — check_and_tidy_date" />
+<meta property="og:title" content="Validate general dates — check_and_tidy_date" />
 
-<meta property="og:description" content="A function to check the date variable is the right date" />
+<meta property="og:description" content="A function to check the date variable whether 
+is the right date. This is an internal function." />
 
 
 
@@ -114,14 +115,15 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Validate dates</h1>
+    <h1>Validate general dates</h1>
     <small class="dont-index">Source: <a href='https://github.com/statisticsnz/migrbc/blob/master/R/check_functions.R'><code>R/check_functions.R</code></a></small>
     <div class="hidden name"><code>check_and_tidy_date.Rd</code></div>
     </div>
 
     <div class="ref-description">
     
-    <p>A function to check the date variable is the right date</p>
+    <p>A function to check the date variable whether 
+is the right date. This is an internal function.</p>
     
     </div>
 
@@ -132,7 +134,7 @@
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
       <th>date</th>
-      <td><p>An date object in string format
+      <td><p>A date object in string format
 such as '2018-01-01'.</p></td>
     </tr>
     <tr>
@@ -140,6 +142,10 @@ such as '2018-01-01'.</p></td>
       <td><p>The name of the date variable.</p></td>
     </tr>
     </table>
+    
+    <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
+
+    <p>A verified date object in string format</p>
     
 
   </div>

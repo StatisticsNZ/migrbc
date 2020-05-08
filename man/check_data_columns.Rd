@@ -2,19 +2,19 @@
 % Please edit documentation in R/check_functions.R
 \name{check_data_columns}
 \alias{check_data_columns}
-\title{Validate the data columns}
+\title{Validate the data columns of crossing information}
 \usage{
 check_data_columns(data)
 }
 \arguments{
-\item{data}{The journey data that should contain columns in (
-'journeyId', 
-'personId', 
-'date_crossing', 
-'is_arrival',
-'journey_sequence',
-'journeyId_prev).}
+\item{data}{The journey data that should contain columns in the set of 
+'journeyId', 'personId', 'date_crossing', 'is_arrival',
+'journey_sequence', and 'journeyId_prev'.}
+}
+\value{
+A NULL value if there is no issue raised.
 }
 \description{
-Validate the data columns
+A function to check the data variable whether contains the 
+right columns of crossing information.
 }

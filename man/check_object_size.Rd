@@ -2,7 +2,7 @@
 % Please edit documentation in R/check_functions.R
 \name{check_object_size}
 \alias{check_object_size}
-\title{Validate the bag of CrossingWorkSpace instances}
+\title{Validate the size of a object}
 \usage{
 check_object_size(object, max_ram = 2, target_unit = "Gb")
 }
@@ -15,8 +15,9 @@ check_object_size(object, max_ram = 2, target_unit = "Gb")
 The value is one of c('bytes', 'Kb', 'Mb', 'Gb', 'Tb', 'Pb').}
 }
 \value{
-NULL if succeed.
+A NULL value if there is no issue raised.
 }
 \description{
-Validate the bag of CrossingWorkSpace instances
+A function to check the size of a data 
+variable whether is in the right range.
 }

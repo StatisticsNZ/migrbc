@@ -40,15 +40,14 @@
 <meta property="og:title" content="A package for classifying border crossings using a rules-based 
  methodology. — migrbc" />
 
-<meta property="og:description" content="The migrbc package provides five categories of 
+<meta property="og:description" content="The migrbc package provides three categories of 
 important functions:
-run_rbc, pre_process, plot_mig_hist, resolve_data
- and resolve_data_with_error. In among of the five functions, 
- run_rbc is the main entry function of the package.
-Two functions: pre_process and plot_mig_hit
- are utility functions. 
-The rest functions resolve_data and
- resolve_data_with_error are 
+run_rbc, pre_process, plot_mig_hist, resolve_data, 
+initialize_logger, and resolve_data_with_error. 
+In among of the five functions, run_rbc is the main entry function of 
+the package. Three functions: initialize_logger, pre_process 
+and plot_mig_hit are utility functions. The rest functions 
+resolve_data and resolve_data_with_error are 
 the key functions to do the rules based classification." />
 
 
@@ -133,20 +132,26 @@ the key functions to do the rules based classification." />
 
     <div class="ref-description">
     
-    <p>The migrbc package provides five categories of 
+    <p>The migrbc package provides three categories of 
 important functions:
-<code>run_rbc</code>, <code>pre_process</code>, <code>plot_mig_hist</code>, <code>resolve_data</code>
- and <code>resolve_data_with_error</code>. In among of the five functions, 
- <code>run_rbc</code> is the main entry function of the package.
-Two functions: <code>pre_process</code> and <code>plot_mig_hit</code>
- are utility functions. 
-The rest functions <code>resolve_data</code> and
- <code>resolve_data_with_error</code> are 
+<code>run_rbc</code>, <code>pre_process</code>, <code>plot_mig_hist</code>, <code>resolve_data</code>, 
+<code>initialize_logger</code>, and <code>resolve_data_with_error</code>. 
+In among of the five functions, <code>run_rbc</code> is the main entry function of 
+the package. Three functions: <code>initialize_logger</code>, <code>pre_process</code> 
+and <code>plot_mig_hit</code> are utility functions. The rest functions 
+<code>resolve_data</code> and <code>resolve_data_with_error</code> are 
 the key functions to do the rules based classification.</p>
     
     </div>
 
         
+    <h2 class="hasAnchor" id="initialize-logger-function"><a class="anchor" href="#initialize-logger-function"></a><code><a href='initialize_logger.html'>initialize_logger</a></code> function</h2>
+
+    
+
+<p>This function is used to initialize the futile.logger so that the user
+ can be notified with the current status of running RBC.</p>
+    
     <h2 class="hasAnchor" id="run-rbc-function"><a class="anchor" href="#run-rbc-function"></a><code><a href='run_rbc.html'>run_rbc</a></code> function</h2>
 
     

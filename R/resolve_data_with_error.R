@@ -14,8 +14,11 @@
 #' of a call to function \code{\link[base]{difftime}}, or an object of
 #' class \code{\link[lubridate:Duration-class]{Duration}}.
 #'   
-#' @return A dataframe object.
+#' @return A dataframe type of object contains journeys with error.
 #' @examples 
+#' 
+#' ## to suppresse log messages to the console
+#' migrbc::initialize_logger(log_level = 1)
 #' 
 #' j1 <-       c(journeyId = 1,
 #'               personId = 1,
@@ -85,7 +88,7 @@
 #'                                        initial_res_status_data = ini_data,
 #'                                        error_message = 'custom error',
 #'                                        include_error_columns = TRUE)
-#' res
+#' head(res)
 #' 
 #' @export
 resolve_data_with_error <- function(data_with_error,

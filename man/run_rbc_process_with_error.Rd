@@ -16,7 +16,7 @@ run_rbc_process_with_error(cross_data, ini_status_data, error_message, tw)
 \item{tw}{Windows Size, by default, it is 487 days.}
 }
 \value{
-A DataFrame object
+A data frame object of classified / labelled journeys
 }
 \description{
 This function is used to resolve a list of person's journeys with error,

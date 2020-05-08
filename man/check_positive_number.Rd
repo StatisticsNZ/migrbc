@@ -2,7 +2,7 @@
 % Please edit documentation in R/check_functions.R
 \name{check_positive_number}
 \alias{check_positive_number}
-\title{Validate a numeric value}
+\title{Validate a positive numeric value}
 \usage{
 check_positive_number(number, name)
 }
@@ -11,6 +11,10 @@ check_positive_number(number, name)
 
 \item{name}{The name of the variable.}
 }
+\value{
+A NULL value if there is no issue raised.
+}
 \description{
-Check a value whether or not it is a number.
+A function to check the variable whether is positive number. 
+This is an internal function.
 }

@@ -36,6 +36,9 @@
 #' @return Returns \code{NULL}, but as a side effect draws a graph
 #' (using R's traditional graphics system).
 #' @examples
+#' ## to suppresse log messages to the console
+#' migrbc::initialize_logger(log_level = 1)
+#' 
 #' plot_test <- function(mig_hist) {
 #'   plot_mig_hist(date_crossing = as.character(mig_hist$date_crossing), 
 #'                 is_arrival = mig_hist$is_arrival,
@@ -170,8 +173,8 @@ plot_mig_hist <- function(date_crossing,
 #' @param date_first The first date occurred.
 #' @param date_last The last date occurred.
 #' 
-#' @return NULL
-#' 
+#' @return A list object that contains values for coordinates
+#'  of horizon.
 segment_coord_horiz <- function(date_crossing,
                                 is_arrival,
                                 date_first,
@@ -189,8 +192,8 @@ segment_coord_horiz <- function(date_crossing,
 #' @param  date_crossing date of border crossing.
 #' @param  is_arrival A Boolean value.
 #' 
-#' @return NULL
-#' 
+#' @return A list object that contains values for coordinates
+#'  of vertical.
 segment_coord_vert <- function(date_crossing, is_arrival) {
   n <- length(date_crossing)
   x0 <- date_crossing

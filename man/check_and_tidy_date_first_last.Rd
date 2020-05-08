@@ -2,7 +2,7 @@
 % Please edit documentation in R/check_functions.R
 \name{check_and_tidy_date_first_last}
 \alias{check_and_tidy_date_first_last}
-\title{Validate dates}
+\title{Validate dates in sequence}
 \usage{
 check_and_tidy_date_first_last(date, date_crossing, name)
 }
@@ -13,6 +13,11 @@ check_and_tidy_date_first_last(date, date_crossing, name)
 
 \item{name}{A name of the checking variable.}
 }
+\value{
+The date value that has been verified and reformatted 
+correctly.
+}
 \description{
-Validate dates
+A function to check the date variable whether
+ is the right date. This is an internal function.
 }

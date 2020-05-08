@@ -7,13 +7,15 @@
 #' @param n_groups The number of groups required to be returned.
 #' @return A list object contains reformatted raw data.
 #' @examples 
+#' ## to suppresse log messages to the console
+#' migrbc::initialize_logger(log_level = 1)
 #' 
-#' number_of_people = 100
+#' number_of_people = 10
 #' person_data <- migrbc::setup_random_test_data(number_of_people, 
 #'                                               initial_date = '2001-01-01', 
 #'                                               numJourneys = 5,
 #'                                               min = 0, 
-#'                                               max = 100)
+#'                                               max = 10)
 #' crossings <- migrbc::pre_process(person_data, n_groups = 10)
 #' crossings
 #' 

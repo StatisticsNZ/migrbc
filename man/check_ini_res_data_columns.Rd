@@ -2,16 +2,18 @@
 % Please edit documentation in R/check_functions.R
 \name{check_ini_res_data_columns}
 \alias{check_ini_res_data_columns}
-\title{Validate the data columns}
+\title{Validate the data columns of the initial residence status data}
 \usage{
 check_ini_res_data_columns(data)
 }
 \arguments{
-\item{data}{The journey data that should contain columns of (
-'personId',
-'res_status_initial',
-'date_finalised').}
+\item{data}{The journey data that should contain columns in the set of 
+'personId', 'res_status_initial', and 'date_finalised'.}
+}
+\value{
+A NULL value if there is no issue raised.
 }
 \description{
-Validate the data columns
+A function to check the data variable whether contains the 
+right columns of crossing information.
 }

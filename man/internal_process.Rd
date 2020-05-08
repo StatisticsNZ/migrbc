@@ -20,6 +20,9 @@ Can be an integer giving the number of days, the result
 of a call to function \code{\link[base]{difftime}}, or an object of
 class \code{\link[lubridate:Duration-class]{Duration}}.}
 }
+\value{
+A data frame object of classified / labelled journeys.
+}
 \description{
 Internal function
 }

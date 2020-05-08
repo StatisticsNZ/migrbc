@@ -2,7 +2,7 @@
 % Please edit documentation in R/utility_functions.R
 \name{setup_random_test_data}
 \alias{setup_random_test_data}
-\title{A function to generate test data for RBC}
+\title{Setup Random Test Data}
 \usage{
 setup_random_test_data(num_people = 1000, initial_date = "2001-01-01",
   numJourneys = 5, min = 0, max = 10)
@@ -22,7 +22,7 @@ setup_random_test_data(num_people = 1000, initial_date = "2001-01-01",
 A data frame object
 }
 \description{
-A function to generate test data for RBC
+A function to generate test data for RBC for toy examples.
 }
 \examples{
 
@@ -31,6 +31,6 @@ res <- setup_random_test_data(1000,
                               numJourneys = 5,
                               min = 0,
                               max = 10)
-res
+head(res)
 
 }

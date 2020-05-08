@@ -59,6 +59,9 @@ If values for \code{date_first} and \code{date_last} are not supplied,
 then defaults are calculated, based on the length of the travel history.
 }
 \examples{
+## to suppresse log messages to the console
+migrbc::initialize_logger(log_level = 1)
+
 plot_test <- function(mig_hist) {
   plot_mig_hist(date_crossing = as.character(mig_hist$date_crossing), 
                 is_arrival = mig_hist$is_arrival,

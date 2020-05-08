@@ -1,14 +1,19 @@
-#' @title Apply rule-based classification to identify which
-#' migration or residence status are unknown
-#'
-#' @description Attempt to determine long-term migration statuses, and
-#' pre-crossing and post-crossing residence statuses, for all
-#' crossings where these statuses are not known. 
-#'
+# main functions
+
+#' @title Run RBC  
+#' @description A function that attempts to determine long-term 
+#' migration statuses, and pre-crossing and post-crossing residence
+#'  statuses, for all border crossings where these statuses are not known. 
 #' @param crossing_data A pre-processed group data contain
-#' journeys, movements and IRS or the raw crossing data.
-#' @param init_res_status_data The raw data of the initial residence status
-#'  in the format of data frame.
+#' journeys, movements and other raw crossing data. The data should 
+#' contain columns in the set of 'journeyId', 'personId', 'date_crossing',
+#'  'is_arrival', 'journey_sequence', and 'journeyId_prev'.
+#' @param init_res_status_data Optional, the raw data of the initial residence
+#'  status in the format of data frame. The journey data should contain 
+#'  columns in the set of 'personId', 'res_status_initial', and
+#'  'date_finalised' if applied. The initial data is a supplementary
+#'  to the \code{crossing_data} that provides the initial residence 
+#'  status of the target people who made the border crossing (journey).
 #' @param window_size The maximum length of the scanning period.
 #' Can be an integer giving the number of days, the result
 #' of a call to function \code{\link[base]{difftime}}, or an object of
@@ -38,12 +43,26 @@
 #' As a special case this argument can be set to the number of the
 #' signal that should be used to kill the children instead of SIGTERM.
 #' 
-#' @return The number of rows in the FinalIsLongTermMig table.
-#'
+#' @return A list type of object that contains two items: 
+#' one is a data frame object that contains classified journeys and the other
+#'  contains journeys that have been marked as error. 
+#' Both items contain the same table structure in the set of 
+#' 'journeyId', 'journeyId_prev', 'personId', 'date_crossing', 'is_arrival', 
+#' 'journey_sequence','days_to_next_crossing', 'res_status_before', 
+#' 'res_status_after', 'is_long_term_mig', 'date_finalised_res_before', 
+#' 'date_finalised_res_after' and 'date_finalised_LTM'. 
+#' The Boolean value (0, and 1) in the column 
+#' 'is_long_term_mig' is the key classified result that tells us 
+#' which journey derived the person to be a long term migrant.
+#' 
 #' @examples
 #' 
 #' ## generate test data 100 people and each person has 
 #' ## 10 journeys
+#' 
+#' ## to suppresse log messages on the screen
+#' migrbc::initialize_logger(log_level = 1)
+#' 
 #' number_of_people <- 100
 #' person_data <- migrbc::setup_random_test_data(
 #'     number_of_people, 

@@ -266,7 +266,7 @@ Rcpp::List rcpp_resolve(Rcpp::List &person_data,
 //' @param tw Windows Size, by default, it is 487 days.
 //' @param ty Threshold of Year, by default, it is 365 days.
 //' 
-//' @return A DataFrame object
+//' @return A data frame object of classified / labelled journeys
 //' 
 // [[Rcpp::export]]
 Rcpp::DataFrame run_rbc_process_core(Rcpp::List &cross_data,
@@ -456,7 +456,7 @@ Rcpp::DataFrame run_rbc_process_core(Rcpp::List &cross_data,
 //' @param error_message The error message.
 //' @param tw Windows Size, by default, it is 487 days.
 //' 
-//' @return A DataFrame object
+//' @return A data frame object of classified / labelled journeys
 //' 
 // [[Rcpp::export]]
 Rcpp::DataFrame run_rbc_process_with_error(Rcpp::List &cross_data,

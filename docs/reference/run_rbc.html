@@ -6,8 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Apply rule-based classification to identify which
-migration or residence status are unknown — run_rbc • migrbc</title>
+<title>Run RBC — run_rbc • migrbc</title>
 
 <!-- jquery -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
@@ -37,12 +36,11 @@ migration or residence status are unknown — run_rbc • migrbc</title>
 
 
 
-<meta property="og:title" content="Apply rule-based classification to identify which
-migration or residence status are unknown — run_rbc" />
+<meta property="og:title" content="Run RBC — run_rbc" />
 
-<meta property="og:description" content="Attempt to determine long-term migration statuses, and
-pre-crossing and post-crossing residence statuses, for all
-crossings where these statuses are not known." />
+<meta property="og:description" content="A function that attempts to determine long-term 
+migration statuses, and pre-crossing and post-crossing residence
+ statuses, for all border crossings where these statuses are not known." />
 
 
 
@@ -118,17 +116,16 @@ crossings where these statuses are not known." />
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Apply rule-based classification to identify which
-migration or residence status are unknown</h1>
+    <h1>Run RBC</h1>
     <small class="dont-index">Source: <a href='https://github.com/statisticsnz/migrbc/blob/master/R/run_rbc.R'><code>R/run_rbc.R</code></a></small>
     <div class="hidden name"><code>run_rbc.Rd</code></div>
     </div>
 
     <div class="ref-description">
     
-    <p>Attempt to determine long-term migration statuses, and
-pre-crossing and post-crossing residence statuses, for all
-crossings where these statuses are not known.</p>
+    <p>A function that attempts to determine long-term 
+migration statuses, and pre-crossing and post-crossing residence
+ statuses, for all border crossings where these statuses are not known.</p>
     
     </div>
 
@@ -142,12 +139,18 @@ crossings where these statuses are not known.</p>
     <tr>
       <th>crossing_data</th>
       <td><p>A pre-processed group data contain
-journeys, movements and IRS or the raw crossing data.</p></td>
+journeys, movements and other raw crossing data. The data should 
+contain columns in the set of 'journeyId', 'personId', 'date_crossing',
+ 'is_arrival', 'journey_sequence', and 'journeyId_prev'.</p></td>
     </tr>
     <tr>
       <th>init_res_status_data</th>
-      <td><p>The raw data of the initial residence status
-in the format of data frame.</p></td>
+      <td><p>Optional, the raw data of the initial residence
+status in the format of data frame. The journey data should contain 
+columns in the set of 'personId', 'res_status_initial', and
+'date_finalised' if applied. The initial data is a supplementary
+to the <code>crossing_data</code> that provides the initial residence 
+status of the target people who made the border crossing (journey).</p></td>
     </tr>
     <tr>
       <th>window_size</th>
@@ -202,13 +205,26 @@ signal that should be used to kill the children instead of SIGTERM.</p></td>
     
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>The number of rows in the FinalIsLongTermMig table.</p>
+    <p>A list type of object that contains two items: 
+one is a data frame object that contains classified journeys and the other
+ contains journeys that have been marked as error. 
+Both items contain the same table structure in the set of 
+'journeyId', 'journeyId_prev', 'personId', 'date_crossing', 'is_arrival', 
+'journey_sequence','days_to_next_crossing', 'res_status_before', 
+'res_status_after', 'is_long_term_mig', 'date_finalised_res_before', 
+'date_finalised_res_after' and 'date_finalised_LTM'. 
+The Boolean value (0, and 1) in the column 
+'is_long_term_mig' is the key classified result that tells us 
+which journey derived the person to be a long term migrant.</p>
     
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'>
 <span class='co'>## generate test data 100 people and each person has </span>
 <span class='co'>## 10 journeys</span>
+
+<span class='co'>## to suppresse log messages on the screen</span>
+<span class='kw pkg'>migrbc</span><span class='kw ns'>::</span><span class='fu'><a href='initialize_logger.html'>initialize_logger</a></span>(<span class='kw'>log_level</span> <span class='kw'>=</span> <span class='fl'>1</span>)</div><div class='output co'>#&gt; logger  'migrbc' has log_level=1 and writes to the console </div><div class='input'>
 <span class='no'>number_of_people</span> <span class='kw'>&lt;-</span> <span class='fl'>100</span>
 <span class='no'>person_data</span> <span class='kw'>&lt;-</span> <span class='kw pkg'>migrbc</span><span class='kw ns'>::</span><span class='fu'><a href='setup_random_test_data.html'>setup_random_test_data</a></span>(
     <span class='no'>number_of_people</span>,
@@ -218,11 +234,11 @@ signal that should be used to kill the children instead of SIGTERM.</p></td>
     <span class='kw'>max</span> <span class='kw'>=</span> <span class='fl'>100</span>)
 <span class='fu'><a href='https://rdrr.io/r/utils/head.html'>head</a></span>(<span class='no'>person_data</span>)</div><div class='output co'>#&gt;   journeyId personId is_arrival date_crossing journey_sequence
 #&gt; 1         1        1          1    2001-01-01                1
-#&gt; 2         2        1          0    2001-01-21                2
-#&gt; 3         3        1          1    2001-02-18                3
-#&gt; 4         4        1          0    2001-04-01                4
-#&gt; 5         5        1          1    2001-05-18                5
-#&gt; 6         6        1          0    2001-07-06                6
+#&gt; 2         2        1          0    2001-01-02                2
+#&gt; 3         3        1          1    2001-01-10                3
+#&gt; 4         4        1          0    2001-01-22                4
+#&gt; 5         5        1          1    2001-02-12                5
+#&gt; 6         6        1          0    2001-04-08                6
 #&gt;   res_status_before res_status_after journeyId_prev
 #&gt; 1                 0                0              0
 #&gt; 2                 0                0              0
@@ -230,76 +246,50 @@ signal that should be used to kill the children instead of SIGTERM.</p></td>
 #&gt; 4                 0                0              0
 #&gt; 5                 0                0              0
 #&gt; 6                 0                0              0</div><div class='input'>
-<span class='no'>cross_spaces</span> <span class='kw'>&lt;-</span> <span class='kw pkg'>migrbc</span><span class='kw ns'>::</span><span class='fu'><a href='pre_process.html'>pre_process</a></span>(<span class='no'>person_data</span>)</div><div class='output co'>#&gt; INFO [2020-05-04 13:23:16] entering 'pre_process' :
-#&gt; INFO [2020-05-04 13:23:16] leaving 'pre_process' : 
-#&gt;               return 1 groups of raw data.</div><div class='input'>
+<span class='no'>cross_spaces</span> <span class='kw'>&lt;-</span> <span class='kw pkg'>migrbc</span><span class='kw ns'>::</span><span class='fu'><a href='pre_process.html'>pre_process</a></span>(<span class='no'>person_data</span>)
+
 <span class='co'>## run in non-parallel</span>
 <span class='no'>res</span> <span class='kw'>&lt;-</span> <span class='kw pkg'>migrbc</span><span class='kw ns'>::</span><span class='fu'>run_rbc</span>(<span class='no'>cross_spaces</span>,
                        <span class='kw'>window_size</span> <span class='kw'>=</span> <span class='fl'>487</span>,
                        <span class='kw'>threshold_year</span> <span class='kw'>=</span> <span class='fl'>365</span>,
-                       <span class='kw'>parallel</span><span class='kw'>=</span><span class='fl'>FALSE</span>)</div><div class='output co'>#&gt; INFO [2020-05-04 13:23:16] entering 'run_rbc' :
-#&gt;                            window_size = 487, 
-#&gt;                            threshold_year = 365, 
-#&gt;                            parallel = FALSE, 
-#&gt;                            n_core = 2,
-#&gt;                            max_ram = 2,
-#&gt;                            include_error_columns = FALSE,
-#&gt;                            mc.cleanup = FALSE
-#&gt; INFO [2020-05-04 13:23:16] entering 'resolve_data' :
-#&gt; INFO [2020-05-04 13:23:16] Running without parallel
-#&gt; INFO [2020-05-04 13:23:16] entering 'resolve_data, chunk =1':
-#&gt;                window_size=487, 
-#&gt;                threshold_year=365
-#&gt; INFO [2020-05-04 13:23:17] leaving 'resolve_data' :
-#&gt; INFO [2020-05-04 13:23:17] leaving 'run_rbc'</div><div class='input'>
+                       <span class='kw'>parallel</span><span class='kw'>=</span><span class='fl'>FALSE</span>)
+
 <span class='co'>## run in parallel with n_core = 2</span>
-<span class='no'>cross_spaces</span> <span class='kw'>&lt;-</span> <span class='kw pkg'>migrbc</span><span class='kw ns'>::</span><span class='fu'><a href='pre_process.html'>pre_process</a></span>(<span class='no'>person_data</span>, <span class='kw'>n_groups</span> <span class='kw'>=</span> <span class='fl'>2</span>)</div><div class='output co'>#&gt; INFO [2020-05-04 13:23:17] entering 'pre_process' :
-#&gt; INFO [2020-05-04 13:23:17] leaving 'pre_process' : 
-#&gt;               return 2 groups of raw data.</div><div class='input'><span class='no'>res</span> <span class='kw'>&lt;-</span> <span class='kw pkg'>migrbc</span><span class='kw ns'>::</span><span class='fu'>run_rbc</span>(<span class='no'>cross_spaces</span>,
+<span class='no'>cross_spaces</span> <span class='kw'>&lt;-</span> <span class='kw pkg'>migrbc</span><span class='kw ns'>::</span><span class='fu'><a href='pre_process.html'>pre_process</a></span>(<span class='no'>person_data</span>, <span class='kw'>n_groups</span> <span class='kw'>=</span> <span class='fl'>2</span>)
+<span class='no'>res</span> <span class='kw'>&lt;-</span> <span class='kw pkg'>migrbc</span><span class='kw ns'>::</span><span class='fu'>run_rbc</span>(<span class='no'>cross_spaces</span>,
                        <span class='kw'>window_size</span> <span class='kw'>=</span> <span class='fl'>487</span>,
                        <span class='kw'>threshold_year</span> <span class='kw'>=</span> <span class='fl'>365</span>,
                        <span class='kw'>parallel</span><span class='kw'>=</span><span class='fl'>TRUE</span>,
-                       <span class='kw'>n_core</span> <span class='kw'>=</span> <span class='fl'>2</span>)</div><div class='output co'>#&gt; INFO [2020-05-04 13:23:17] entering 'run_rbc' :
-#&gt;                            window_size = 487, 
-#&gt;                            threshold_year = 365, 
-#&gt;                            parallel = TRUE, 
-#&gt;                            n_core = 2,
-#&gt;                            max_ram = 2,
-#&gt;                            include_error_columns = FALSE,
-#&gt;                            mc.cleanup = FALSE
-#&gt; INFO [2020-05-04 13:23:17] entering 'resolve_data' :
-#&gt; INFO [2020-05-04 13:23:17] Running with parallel:
-#&gt;                  n_cores = 2
-#&gt; INFO [2020-05-04 13:23:17] leaving 'resolve_data' :
-#&gt; INFO [2020-05-04 13:23:17] leaving 'run_rbc'</div><div class='input'>
+                       <span class='kw'>n_core</span> <span class='kw'>=</span> <span class='fl'>2</span>)
+
 <span class='fu'><a href='https://rdrr.io/r/utils/head.html'>head</a></span>(<span class='no'>res</span>$<span class='no'>journeys</span>)</div><div class='output co'>#&gt;   journeyId journeyId_prev personId date_crossing journey_sequence
 #&gt; 1         1              0        1    2001-01-01                1
-#&gt; 2         2              1        1    2001-01-21                2
-#&gt; 3         3              2        1    2001-02-18                3
-#&gt; 4         4              3        1    2001-04-01                4
-#&gt; 5         5              4        1    2001-05-18                5
-#&gt; 6         6              5        1    2001-07-06                6
+#&gt; 2         2              1        1    2001-01-02                2
+#&gt; 3         3              2        1    2001-01-10                3
+#&gt; 4         4              3        1    2001-01-22                4
+#&gt; 5         5              4        1    2001-02-12                5
+#&gt; 6         6              5        1    2001-04-08                6
 #&gt;   days_to_next_crossing is_arrival res_status_before res_status_after
-#&gt; 1                    20          1                 0                0
-#&gt; 2                    28          0                 0                0
-#&gt; 3                    42          1                 0                0
-#&gt; 4                    47          0                 0                0
-#&gt; 5                    49          1                 0                0
-#&gt; 6                    57          0                 0                0
+#&gt; 1                     1          1                 0                0
+#&gt; 2                     8          0                 0                0
+#&gt; 3                    12          1                 0                0
+#&gt; 4                    21          0                 0                0
+#&gt; 5                    55          1                 0                0
+#&gt; 6                    69          0                 0                0
 #&gt;   is_long_term_mig date_finalised_res_before date_finalised_res_after
-#&gt; 1                0                2001-01-01               2001-08-22
-#&gt; 2                0                2001-08-22               2001-08-22
-#&gt; 3                0                2001-08-22               2001-12-06
-#&gt; 4                0                2001-12-06               2001-12-06
-#&gt; 5                0                2001-12-06               2002-01-22
-#&gt; 6                0                2002-01-22               2002-01-22
+#&gt; 1                0                2001-01-01               2001-09-18
+#&gt; 2                0                2001-09-18               2001-09-18
+#&gt; 3                0                2001-09-18               2001-09-26
+#&gt; 4                0                2001-09-26               2001-09-26
+#&gt; 5                0                2001-09-26               2001-10-17
+#&gt; 6                0                2001-10-17               2001-10-17
 #&gt;   date_finalised_LTM
-#&gt; 1         2001-08-22
-#&gt; 2         2001-01-21
-#&gt; 3         2001-12-06
-#&gt; 4         2001-04-01
-#&gt; 5         2002-01-22
-#&gt; 6         2001-07-06</div><div class='input'><span class='fu'><a href='https://rdrr.io/r/utils/head.html'>head</a></span>(<span class='no'>res</span>$<span class='no'>error_data</span>)</div><div class='output co'>#&gt;  [1] journeyId                 journeyId_prev           
+#&gt; 1         2001-09-18
+#&gt; 2         2001-01-02
+#&gt; 3         2001-09-26
+#&gt; 4         2001-01-22
+#&gt; 5         2001-10-17
+#&gt; 6         2001-04-08</div><div class='input'><span class='fu'><a href='https://rdrr.io/r/utils/head.html'>head</a></span>(<span class='no'>res</span>$<span class='no'>error_data</span>)</div><div class='output co'>#&gt;  [1] journeyId                 journeyId_prev           
 #&gt;  [3] personId                  date_crossing            
 #&gt;  [5] journey_sequence          days_to_next_crossing    
 #&gt;  [7] is_arrival                res_status_before        

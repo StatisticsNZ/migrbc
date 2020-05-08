@@ -2,7 +2,7 @@
 % Please edit documentation in R/utility_functions.R
 \name{initialize_logger}
 \alias{initialize_logger}
-\title{Initialize futile.logger}
+\title{Initialize Futile Logger}
 \usage{
 initialize_logger(log_level = 6, log_path = NULL)
 }
@@ -27,10 +27,17 @@ This function is used to initialize the futile.logger
  status of running RBC.
 }
 \examples{
-## to display all messages on the screen
-migrbc::initialize_logger(log_level = 9)
+## futile.logger::FATAL: 1
+## futile.logger::ERROR: 2
+## futile.logger::WARN:  4
+## futile.logger::INFO:  6
+## futile.logger::DEBUG: 8
+## futile.logger::TRACE: 9
 
-## to the temp dir
-## migrbc::initialize_logger(log_level = 9, log_path = tempdir())
+## to suppresse log messages to the console
+migrbc::initialize_logger(log_level = 1)
+
+## to display all messages to the console
+migrbc::initialize_logger(log_level = 9)
 
 }

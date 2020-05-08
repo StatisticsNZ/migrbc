@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Validate the data columns — check_ini_res_data_columns • migrbc</title>
+<title>Validate the data columns of the initial residence status data — check_ini_res_data_columns • migrbc</title>
 
 <!-- jquery -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
@@ -36,9 +36,10 @@
 
 
 
-<meta property="og:title" content="Validate the data columns — check_ini_res_data_columns" />
+<meta property="og:title" content="Validate the data columns of the initial residence status data — check_ini_res_data_columns" />
 
-<meta property="og:description" content="Validate the data columns" />
+<meta property="og:description" content="A function to check the data variable whether contains the 
+right columns of crossing information." />
 
 
 
@@ -114,14 +115,15 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Validate the data columns</h1>
+    <h1>Validate the data columns of the initial residence status data</h1>
     <small class="dont-index">Source: <a href='https://github.com/statisticsnz/migrbc/blob/master/R/check_functions.R'><code>R/check_functions.R</code></a></small>
     <div class="hidden name"><code>check_ini_res_data_columns.Rd</code></div>
     </div>
 
     <div class="ref-description">
     
-    <p>Validate the data columns</p>
+    <p>A function to check the data variable whether contains the 
+right columns of crossing information.</p>
     
     </div>
 
@@ -132,12 +134,14 @@
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
       <th>data</th>
-      <td><p>The journey data that should contain columns of (
-'personId',
-'res_status_initial',
-'date_finalised').</p></td>
+      <td><p>The journey data that should contain columns in the set of 
+'personId', 'res_status_initial', and 'date_finalised'.</p></td>
     </tr>
     </table>
+    
+    <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
+
+    <p>A NULL value if there is no issue raised.</p>
     
 
   </div>

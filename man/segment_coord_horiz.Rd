@@ -15,6 +15,10 @@ segment_coord_horiz(date_crossing, is_arrival, date_first, date_last)
 
 \item{date_last}{The last date occurred.}
 }
+\value{
+A list object that contains values for coordinates
+ of horizon.
+}
 \description{
 Internal function
 }

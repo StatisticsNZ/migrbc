@@ -34,7 +34,7 @@ rcpp_resolve <- function(person_data, int_res_status, initial_date_finalised, tw
 #' @param tw Windows Size, by default, it is 487 days.
 #' @param ty Threshold of Year, by default, it is 365 days.
 #' 
-#' @return A DataFrame object
+#' @return A data frame object of classified / labelled journeys
 #' 
 run_rbc_process_core <- function(cross_data, ini_status_data, tw, ty) {
     .Call(`_migrbc_run_rbc_process_core`, cross_data, ini_status_data, tw, ty)
@@ -51,7 +51,7 @@ run_rbc_process_core <- function(cross_data, ini_status_data, tw, ty) {
 #' @param error_message The error message.
 #' @param tw Windows Size, by default, it is 487 days.
 #' 
-#' @return A DataFrame object
+#' @return A data frame object of classified / labelled journeys
 #' 
 run_rbc_process_with_error <- function(cross_data, ini_status_data, error_message, tw) {
     .Call(`_migrbc_run_rbc_process_with_error`, cross_data, ini_status_data, error_message, tw)

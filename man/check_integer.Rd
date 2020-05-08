@@ -11,6 +11,10 @@ check_integer(name = NULL, value = NULL)
 
 \item{value}{The validating variable.}
 }
+\value{
+A NULL value if there is no issue raised.
+}
 \description{
-Check a value whether or not it is an integer.
+A function to check the variable whether 
+is the right integer type. This is an internal function.
 }

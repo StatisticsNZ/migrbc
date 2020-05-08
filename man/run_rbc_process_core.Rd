@@ -16,7 +16,7 @@ run_rbc_process_core(cross_data, ini_status_data, tw, ty)
 \item{ty}{Threshold of Year, by default, it is 365 days.}
 }
 \value{
-A DataFrame object
+A data frame object of classified / labelled journeys
 }
 \description{
 This function is used to resolve a list of person's journeys,

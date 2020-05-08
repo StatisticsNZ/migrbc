@@ -2,16 +2,20 @@
 % Please edit documentation in R/check_functions.R
 \name{check_and_tidy_date}
 \alias{check_and_tidy_date}
-\title{Validate dates}
+\title{Validate general dates}
 \usage{
 check_and_tidy_date(date, date_name)
 }
 \arguments{
-\item{date}{An date object in string format
+\item{date}{A date object in string format
 such as '2018-01-01'.}
 
 \item{date_name}{The name of the date variable.}
 }
+\value{
+A verified date object in string format
+}
 \description{
-A function to check the date variable is the right date
+A function to check the date variable whether 
+is the right date. This is an internal function.
 }

@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Initialize futile.logger — initialize_logger • migrbc</title>
+<title>Initialize Futile Logger — initialize_logger • migrbc</title>
 
 <!-- jquery -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
@@ -36,7 +36,7 @@
 
 
 
-<meta property="og:title" content="Initialize futile.logger — initialize_logger" />
+<meta property="og:title" content="Initialize Futile Logger — initialize_logger" />
 
 <meta property="og:description" content="This function is used to initialize the futile.logger
  so that the user can be notified with the current
@@ -116,7 +116,7 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Initialize futile.logger</h1>
+    <h1>Initialize Futile Logger</h1>
     <small class="dont-index">Source: <a href='https://github.com/statisticsnz/migrbc/blob/master/R/utility_functions.R'><code>R/utility_functions.R</code></a></small>
     <div class="hidden name"><code>initialize_logger.Rd</code></div>
     </div>
@@ -157,11 +157,17 @@ environment.</p></td>
     
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='co'>## to display all messages on the screen</span>
-<span class='kw pkg'>migrbc</span><span class='kw ns'>::</span><span class='fu'>initialize_logger</span>(<span class='kw'>log_level</span> <span class='kw'>=</span> <span class='fl'>9</span>)</div><div class='output co'>#&gt; logger  'migrbc' has log_level=9 and writes to the console </div><div class='input'>
-## to the temp dir
-## migrbc::initialize_logger(log_level = 9, log_path = tempdir())
+    <pre class="examples"><div class='input'><span class='co'>## futile.logger::FATAL: 1</span>
+<span class='co'>## futile.logger::ERROR: 2</span>
+<span class='co'>## futile.logger::WARN:  4</span>
+<span class='co'>## futile.logger::INFO:  6</span>
+<span class='co'>## futile.logger::DEBUG: 8</span>
+<span class='co'>## futile.logger::TRACE: 9</span>
 
+<span class='co'>## to suppresse log messages to the console</span>
+<span class='kw pkg'>migrbc</span><span class='kw ns'>::</span><span class='fu'>initialize_logger</span>(<span class='kw'>log_level</span> <span class='kw'>=</span> <span class='fl'>1</span>)</div><div class='output co'>#&gt; logger  'migrbc' has log_level=1 and writes to the console </div><div class='input'>
+<span class='co'>## to display all messages to the console</span>
+<span class='kw pkg'>migrbc</span><span class='kw ns'>::</span><span class='fu'>initialize_logger</span>(<span class='kw'>log_level</span> <span class='kw'>=</span> <span class='fl'>9</span>)</div><div class='output co'>#&gt; logger  'migrbc' has log_level=9 and writes to the console </div><div class='input'>
 </div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">

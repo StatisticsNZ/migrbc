@@ -1,12 +1,12 @@
-#' Validate an integer value
+#' @title Validate an integer value
 #' 
-#' Check a value whether or not it is an integer.
+#' @description A function to check the variable whether 
+#' is the right integer type. This is an internal function.
 #' 
 #' @param name The name of the variable.
 #' @param value The validating variable.
 #' 
-#' @return NULL 
-#' 
+#' @return A NULL value if there is no issue raised.
 check_integer <- function(name = NULL, value = NULL) {
   if (is.null(value)) {
     return(NULL)
@@ -33,14 +33,14 @@ check_integer <- function(name = NULL, value = NULL) {
   NULL
 }
 
-#' Validate a logical value
+#' @title Validate a logical value
 #' 
-#' Check a value whether or not it is a Boolean value.
+#' @description A function to check the variable whether 
+#' is the right logic type. This is an internal function.
 #' 
 #' @param check_value Boolean value to present In/Out the country.
 #' 
-#' @return NULL 
-#' 
+#' @return A NULL value if there is no issue raised.
 check_is_logic <- function(check_value) {
   if (is.numeric(check_value)) {
     if (!all(check_value %in% c(0L, 1L))) {
@@ -60,13 +60,17 @@ check_is_logic <- function(check_value) {
   NULL
 }
 
-#' Validate dates
+#' @title Validate dates in sequence
 #' 
+#' @description A function to check the date variable whether
+#'  is the right date. This is an internal function.
+#'  
 #' @param date The last date to compare with.
 #' @param date_crossing The border crossing date.
 #' @param name A name of the checking variable.
 #' 
-#' @return NULL 
+#' @return The date value that has been verified and reformatted 
+#' correctly.
 #' 
 check_and_tidy_date_first_last <- function(date, 
                                            date_crossing, name) {
@@ -121,14 +125,15 @@ check_and_tidy_date_first_last <- function(date,
   date
 }
 
-#' Validate a numeric value
+#' @title Validate a positive numeric value
 #' 
-#' Check a value whether or not it is a number.
+#' @description A function to check the variable whether is positive number. 
+#' This is an internal function.
 #' 
 #' @param number The checking value.
 #' @param name The name of the variable.
 #' 
-#' @return NULL 
+#' @return A NULL value if there is no issue raised.
 #' 
 check_positive_number <- function(number, name) {
   if (!identical(length(number), 1L)) {
@@ -146,11 +151,15 @@ check_positive_number <- function(number, name) {
   NULL
 }
 
-#' Validate dates
+#' @title Validate dates on border crossing.
 #' 
+#' @description A function to check the date variable whether 
+#' is the right date. This is an internal function.
+#'  
 #' @param date_crossing The border crossing date.
 #' 
-#' @return NULL 
+#' @return The border crossing date that has been verified and 
+#' tidied up. 
 #' 
 check_and_tidy_date_crossing <- function(date_crossing) {
   if (any(is.na(date_crossing))) {
@@ -184,15 +193,16 @@ check_and_tidy_date_crossing <- function(date_crossing) {
   date_crossing
 }
 
-#' Validate dates
+#' @title Validate general dates
 #' 
-#' A function to check the date variable is the right date
+#' @description A function to check the date variable whether 
+#' is the right date. This is an internal function.
 #' 
-#' @param date An date object in string format
+#' @param date A date object in string format
 #'  such as '2018-01-01'.
 #' @param date_name The name of the date variable.
 #' 
-#' @return NULL
+#' @return A verified date object in string format
 #' 
 check_and_tidy_date <- function(date, date_name) {
   if (is.null(date)) {
@@ -226,8 +236,11 @@ check_and_tidy_date <- function(date, date_name) {
   date
 }
 
-#' Validate the bag of CrossingWorkSpace object
+#' @title Validate the size of data (work space)
 #' 
+#' @description A function to check the size of a 
+#' data variable whether is in the right range.
+#'  
 #' @param pre_processed_data Data that processed by the function 
 #'  \code{pre_process}.
 #' @param max_ram A value of the maximum size of the list of 
@@ -235,7 +248,7 @@ check_and_tidy_date <- function(date, date_name) {
 #' @param target_unit The target unit, i.e., 'Gb', 'Tb' and  'Pb'.
 #' The default value is 'Gb'.
 #' 
-#' @return NULL
+#' @return A NULL value if there is no issue raised.
 #' 
 #' @export
 check_work_spaces <- function(pre_processed_data,
@@ -260,14 +273,17 @@ check_work_spaces <- function(pre_processed_data,
   NULL
 }
 
-#' Validate the bag of CrossingWorkSpace instances
+#' @title Validate the size of a object
+#' 
+#' @description A function to check the size of a data 
+#' variable whether is in the right range.
 #' 
 #' @param object An object that is required to check.
 #' @param max_ram The maximum size of the target object.
 #' @param target_unit The target unit that is constrained. 
 #' The value is one of c('bytes', 'Kb', 'Mb', 'Gb', 'Tb', 'Pb').
 #' 
-#' @return NULL if succeed.
+#' @return A NULL value if there is no issue raised.
 #' 
 #' @export
 check_object_size <- function(object, max_ram = 2, target_unit = "Gb") {
@@ -294,17 +310,16 @@ check_object_size <- function(object, max_ram = 2, target_unit = "Gb") {
   NULL
 }
 
-#' Validate the data columns
+#' @title Validate the data columns of crossing information
 #' 
-#' @param data The journey data that should contain columns in (
-#'            'journeyId', 
-#'            'personId', 
-#'            'date_crossing', 
-#'            'is_arrival',
-#'            'journey_sequence',
-#'            'journeyId_prev).
+#' @description A function to check the data variable whether contains the 
+#' right columns of crossing information.
+#' 
+#' @param data The journey data that should contain columns in the set of 
+#' 'journeyId', 'personId', 'date_crossing', 'is_arrival',
+#' 'journey_sequence', and 'journeyId_prev'.
 #'            
-#' @return NULL
+#' @return A NULL value if there is no issue raised.
 #'
 #' @export 
 check_data_columns <- function(data) {
@@ -328,14 +343,15 @@ check_data_columns <- function(data) {
   NULL
 }
 
-#' Validate the data columns
+#' @title Validate the data columns of the initial residence status data
 #'
-#' @param data The journey data that should contain columns of (
-#'            'personId',
-#'            'res_status_initial',
-#'            'date_finalised').
+#' @description A function to check the data variable whether contains the 
+#' right columns of crossing information.
+#' 
+#' @param data The journey data that should contain columns in the set of 
+#' 'personId', 'res_status_initial', and 'date_finalised'.
 #'
-#' @return NULL
+#' @return A NULL value if there is no issue raised.
 #'
 #' @export
 check_ini_res_data_columns <- function(data) {

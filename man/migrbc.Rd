@@ -7,17 +7,22 @@
 \title{A package for classifying border crossings using a rules-based 
  methodology.}
 \description{
-The migrbc package provides five categories of 
+The migrbc package provides three categories of 
 important functions:
-\code{run_rbc}, \code{pre_process}, \code{plot_mig_hist}, \code{resolve_data}
- and \code{resolve_data_with_error}. In among of the five functions, 
- \code{run_rbc} is the main entry function of the package.
-Two functions: \code{pre_process} and \code{plot_mig_hit}
- are utility functions. 
-The rest functions \code{resolve_data} and
- \code{resolve_data_with_error} are 
+\code{run_rbc}, \code{pre_process}, \code{plot_mig_hist}, \code{resolve_data}, 
+\code{initialize_logger}, and \code{resolve_data_with_error}. 
+In among of the five functions, \code{run_rbc} is the main entry function of 
+the package. Three functions: \code{initialize_logger}, \code{pre_process} 
+and \code{plot_mig_hit} are utility functions. The rest functions 
+\code{resolve_data} and \code{resolve_data_with_error} are 
 the key functions to do the rules based classification.
 }
+\section{\code{\link[migrbc]{initialize_logger}} function}{
+
+This function is used to initialize the futile.logger so that the user
+ can be notified with the current status of running RBC.
+}
+
 \section{\code{\link[migrbc]{run_rbc}} function}{
 
 The run_rbc function attempt to determine long-term migration statuses, 

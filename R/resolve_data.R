@@ -27,16 +27,18 @@
 #' As a special case this argument can be set to the number of the
 #' signal that should be used to kill the children instead of SIGTERM.
 #' 
-#' @return A list contains a classified journey dataframe object and a error 
-#'  dataframe object.
+#' @return A list type of object that contains a classified journey 
+#' dataframe object and a error dataframe object.
 #' @examples 
+#' ## to suppresse log messages to the console
+#' migrbc::initialize_logger(log_level = 1)
 #' 
-#' number_of_people = 100
+#' number_of_people = 10
 #' person_data <- migrbc::setup_random_test_data(number_of_people, 
 #'                                  initial_date = '2001-01-01', 
 #'                                  numJourneys = 5,
 #'                                  min = 0, 
-#'                                  max = 100)
+#'                                  max = 10)
 #' crossings <- migrbc::pre_process(person_data, n_groups = 10)
 #' crossings
 #' cross_spaces <- migrbc::resolve_data(crossings)
@@ -129,7 +131,7 @@ resolve_data <- function(grouped_data,
 #' Can be an integer giving the number of days, the result
 #' of a call to function \code{\link[base]{difftime}}, or an object of
 #' class \code{\link[lubridate:Duration-class]{Duration}}.
-#' 
+#' @return A data frame object of classified / labelled journeys.
 internal_process <- function(subgroup,
                              window_size,
                              threshold_year) {

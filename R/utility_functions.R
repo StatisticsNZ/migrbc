@@ -1,8 +1,11 @@
-#' A function to check the size of an object
+#' @title Get Object Size
+#' 
+#' @description A function to get the size of an object
 #' 
 #' @param object The target object.
 #' 
-#' @return A named list object.
+#' @return A named list object that contains information on the 
+#'  size of an object and the size unit.
 #'
 #' @examples
 #' res <- get_object_size(TRUE)
@@ -16,7 +19,9 @@ get_object_size <- function(object) {
   list(size = size_num, unit = size_unit)
 }
 
-#' A function to generate test data for RBC
+#' @title Setup Random Test Data
+#' 
+#' @description A function to generate test data for RBC for toy examples.
 #' 
 #' @param num_people The number of person instances.
 #' @param initial_date The start crossing date.
@@ -32,7 +37,7 @@ get_object_size <- function(object) {
 #'                               numJourneys = 5,
 #'                               min = 0,
 #'                               max = 10)
-#' res
+#' head(res)
 #' 
 #' @export
 ## NOT TEST
@@ -64,7 +69,9 @@ setup_random_test_data <- function(num_people = 1000,
   res
 }
 
-#' An internal function to create test data
+#' @title Get Random Dates
+#' 
+#' @description An internal function to create test data 
 #' 
 #' This function is used to generate random dates
 #' for \code{setup_random_test_data}
@@ -94,9 +101,9 @@ get_random_dates <- function(start_date,
   res
 }
 
-#' Initialize futile.logger
+#' @title Initialize Futile Logger
 #' 
-#' This function is used to initialize the futile.logger
+#' @description This function is used to initialize the futile.logger
 #'  so that the user can be notified with the current
 #'  status of running RBC.
 #'  
@@ -112,11 +119,18 @@ get_random_dates <- function(start_date,
 #' 
 #' @return it runs on side effects but also return a simple message.
 #' @examples 
-#' ## to display all messages on the screen
-#' migrbc::initialize_logger(log_level = 9)
+#' ## futile.logger::FATAL: 1
+#' ## futile.logger::ERROR: 2
+#' ## futile.logger::WARN:  4
+#' ## futile.logger::INFO:  6
+#' ## futile.logger::DEBUG: 8
+#' ## futile.logger::TRACE: 9
 #' 
-#' ## to the temp dir
-#' ## migrbc::initialize_logger(log_level = 9, log_path = tempdir())
+#' ## to suppresse log messages to the console
+#' migrbc::initialize_logger(log_level = 1)
+#' 
+#' ## to display all messages to the console
+#' migrbc::initialize_logger(log_level = 9)
 #' 
 #' @export
 ## NOT TEST

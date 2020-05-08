@@ -40,21 +40,23 @@ As a special case this argument can be set to the number of the
 signal that should be used to kill the children instead of SIGTERM.}
 }
 \value{
-A list contains a classified journey dataframe object and a error 
- dataframe object.
+A list type of object that contains a classified journey 
+dataframe object and a error dataframe object.
 }
 \description{
 This function is the key function to do the rules 
  based classification.
 }
 \examples{
+## to suppresse log messages to the console
+migrbc::initialize_logger(log_level = 1)
 
-number_of_people = 100
+number_of_people = 10
 person_data <- migrbc::setup_random_test_data(number_of_people, 
                                  initial_date = '2001-01-01', 
                                  numJourneys = 5,
                                  min = 0, 
-                                 max = 100)
+                                 max = 10)
 crossings <- migrbc::pre_process(person_data, n_groups = 10)
 crossings
 cross_spaces <- migrbc::resolve_data(crossings)

@@ -11,6 +11,10 @@ segment_coord_vert(date_crossing, is_arrival)
 
 \item{is_arrival}{A Boolean value.}
 }
+\value{
+A list object that contains values for coordinates
+ of vertical.
+}
 \description{
 Internal function
 }

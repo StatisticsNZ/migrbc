@@ -2,7 +2,7 @@
 % Please edit documentation in R/utility_functions.R
 \name{get_random_dates}
 \alias{get_random_dates}
-\title{An internal function to create test data}
+\title{Get Random Dates}
 \usage{
 get_random_dates(start_date, num_of_dates = 1000, min = 0, max = 100,
   seed = NULL)
@@ -22,6 +22,8 @@ get_random_dates(start_date, num_of_dates = 1000, min = 0, max = 100,
 A list of boarder crossing dates
 }
 \description{
+An internal function to create test data 
+
 This function is used to generate random dates
 for \code{setup_random_test_data}
 }

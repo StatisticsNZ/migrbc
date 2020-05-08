@@ -9,6 +9,10 @@ check_is_logic(check_value)
 \arguments{
 \item{check_value}{Boolean value to present In/Out the country.}
 }
+\value{
+A NULL value if there is no issue raised.
+}
 \description{
-Check a value whether or not it is a Boolean value.
+A function to check the variable whether 
+is the right logic type. This is an internal function.
 }
