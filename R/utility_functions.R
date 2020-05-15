@@ -32,7 +32,7 @@ get_object_size <- function(object) {
 #'
 #' @examples
 #' 
-#' res <- setup_random_test_data(1000, 
+#' res <- setup_random_test_data(10, 
 #'                               initial_date = '2001-01-01',
 #'                               numJourneys = 5,
 #'                               min = 0,
@@ -41,7 +41,7 @@ get_object_size <- function(object) {
 #' 
 #' @export
 ## NOT TEST
-setup_random_test_data <- function(num_people = 1000, 
+setup_random_test_data <- function(num_people = 10, 
                                    initial_date = "2001-01-01",
                                    numJourneys = 5,
                                    min = 0,

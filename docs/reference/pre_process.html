@@ -72,7 +72,7 @@ small chunks." />
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">migrbc</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">2.0.8</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">2.0.9</span>
       </span>
     </div>
 
@@ -167,9 +167,9 @@ in the format of data frame.</p></td>
 #&gt;   journeyId personId is_arrival date_crossing journey_sequence
 #&gt; 1         1        1          1    2001-01-01                1
 #&gt; 2         2        1          0    2001-01-01                2
-#&gt; 3         3        1          1    2001-01-04                3
-#&gt; 4         4        1          0    2001-01-09                4
-#&gt; 5         5        1          1    2001-01-15                5
+#&gt; 3         3        1          1    2001-01-02                3
+#&gt; 4         4        1          0    2001-01-04                4
+#&gt; 5         5        1          1    2001-01-13                5
 #&gt;   res_status_before res_status_after journeyId_prev
 #&gt; 1                 0                0              0
 #&gt; 2                 0                0              0
@@ -186,10 +186,10 @@ in the format of data frame.</p></td>
 #&gt; $`2`$group_data
 #&gt;    journeyId personId is_arrival date_crossing journey_sequence
 #&gt; 6          1        2          1    2001-01-01                1
-#&gt; 7          2        2          0    2001-01-04                2
-#&gt; 8          3        2          1    2001-01-08                3
-#&gt; 9          4        2          0    2001-01-14                4
-#&gt; 10         5        2          1    2001-01-21                5
+#&gt; 7          2        2          0    2001-01-01                2
+#&gt; 8          3        2          1    2001-01-02                3
+#&gt; 9          4        2          0    2001-01-12                4
+#&gt; 10         5        2          1    2001-01-22                5
 #&gt;    res_status_before res_status_after journeyId_prev
 #&gt; 6                  0                0              0
 #&gt; 7                  0                0              0
@@ -207,9 +207,9 @@ in the format of data frame.</p></td>
 #&gt;    journeyId personId is_arrival date_crossing journey_sequence
 #&gt; 11         1        3          1    2001-01-01                1
 #&gt; 12         2        3          0    2001-01-01                2
-#&gt; 13         3        3          1    2001-01-03                3
-#&gt; 14         4        3          0    2001-01-08                4
-#&gt; 15         5        3          1    2001-01-18                5
+#&gt; 13         3        3          1    2001-01-08                3
+#&gt; 14         4        3          0    2001-01-15                4
+#&gt; 15         5        3          1    2001-01-23                5
 #&gt;    res_status_before res_status_after journeyId_prev
 #&gt; 11                 0                0              0
 #&gt; 12                 0                0              0
@@ -227,9 +227,9 @@ in the format of data frame.</p></td>
 #&gt;    journeyId personId is_arrival date_crossing journey_sequence
 #&gt; 16         1        4          1    2001-01-01                1
 #&gt; 17         2        4          0    2001-01-03                2
-#&gt; 18         3        4          1    2001-01-06                3
-#&gt; 19         4        4          0    2001-01-11                4
-#&gt; 20         5        4          1    2001-01-20                5
+#&gt; 18         3        4          1    2001-01-10                3
+#&gt; 19         4        4          0    2001-01-18                4
+#&gt; 20         5        4          1    2001-01-26                5
 #&gt;    res_status_before res_status_after journeyId_prev
 #&gt; 16                 0                0              0
 #&gt; 17                 0                0              0
@@ -246,10 +246,10 @@ in the format of data frame.</p></td>
 #&gt; $`5`$group_data
 #&gt;    journeyId personId is_arrival date_crossing journey_sequence
 #&gt; 21         1        5          1    2001-01-01                1
-#&gt; 22         2        5          0    2001-01-02                2
-#&gt; 23         3        5          1    2001-01-03                3
-#&gt; 24         4        5          0    2001-01-07                4
-#&gt; 25         5        5          1    2001-01-16                5
+#&gt; 22         2        5          0    2001-01-03                2
+#&gt; 23         3        5          1    2001-01-06                3
+#&gt; 24         4        5          0    2001-01-12                4
+#&gt; 25         5        5          1    2001-01-21                5
 #&gt;    res_status_before res_status_after journeyId_prev
 #&gt; 21                 0                0              0
 #&gt; 22                 0                0              0
@@ -266,10 +266,10 @@ in the format of data frame.</p></td>
 #&gt; $`6`$group_data
 #&gt;    journeyId personId is_arrival date_crossing journey_sequence
 #&gt; 26         1        6          1    2001-01-01                1
-#&gt; 27         2        6          0    2001-01-03                2
-#&gt; 28         3        6          1    2001-01-07                3
+#&gt; 27         2        6          0    2001-01-01                2
+#&gt; 28         3        6          1    2001-01-06                3
 #&gt; 29         4        6          0    2001-01-12                4
-#&gt; 30         5        6          1    2001-01-21                5
+#&gt; 30         5        6          1    2001-01-22                5
 #&gt;    res_status_before res_status_after journeyId_prev
 #&gt; 26                 0                0              0
 #&gt; 27                 0                0              0
@@ -286,10 +286,10 @@ in the format of data frame.</p></td>
 #&gt; $`7`$group_data
 #&gt;    journeyId personId is_arrival date_crossing journey_sequence
 #&gt; 31         1        7          1    2001-01-01                1
-#&gt; 32         2        7          0    2001-01-02                2
-#&gt; 33         3        7          1    2001-01-04                3
-#&gt; 34         4        7          0    2001-01-09                4
-#&gt; 35         5        7          1    2001-01-16                5
+#&gt; 32         2        7          0    2001-01-03                2
+#&gt; 33         3        7          1    2001-01-07                3
+#&gt; 34         4        7          0    2001-01-12                4
+#&gt; 35         5        7          1    2001-01-22                5
 #&gt;    res_status_before res_status_after journeyId_prev
 #&gt; 31                 0                0              0
 #&gt; 32                 0                0              0
@@ -306,10 +306,10 @@ in the format of data frame.</p></td>
 #&gt; $`8`$group_data
 #&gt;    journeyId personId is_arrival date_crossing journey_sequence
 #&gt; 36         1        8          1    2001-01-01                1
-#&gt; 37         2        8          0    2001-01-04                2
-#&gt; 38         3        8          1    2001-01-09                3
-#&gt; 39         4        8          0    2001-01-15                4
-#&gt; 40         5        8          1    2001-01-22                5
+#&gt; 37         2        8          0    2001-01-01                2
+#&gt; 38         3        8          1    2001-01-02                3
+#&gt; 39         4        8          0    2001-01-10                4
+#&gt; 40         5        8          1    2001-01-20                5
 #&gt;    res_status_before res_status_after journeyId_prev
 #&gt; 36                 0                0              0
 #&gt; 37                 0                0              0
@@ -326,10 +326,10 @@ in the format of data frame.</p></td>
 #&gt; $`9`$group_data
 #&gt;    journeyId personId is_arrival date_crossing journey_sequence
 #&gt; 41         1        9          1    2001-01-01                1
-#&gt; 42         2        9          0    2001-01-05                2
-#&gt; 43         3        9          1    2001-01-09                3
-#&gt; 44         4        9          0    2001-01-15                4
-#&gt; 45         5        9          1    2001-01-22                5
+#&gt; 42         2        9          0    2001-01-02                2
+#&gt; 43         3        9          1    2001-01-08                3
+#&gt; 44         4        9          0    2001-01-16                4
+#&gt; 45         5        9          1    2001-01-26                5
 #&gt;    res_status_before res_status_after journeyId_prev
 #&gt; 41                 0                0              0
 #&gt; 42                 0                0              0
@@ -346,10 +346,10 @@ in the format of data frame.</p></td>
 #&gt; $`10`$group_data
 #&gt;    journeyId personId is_arrival date_crossing journey_sequence
 #&gt; 46         1       10          1    2001-01-01                1
-#&gt; 47         2       10          0    2001-01-04                2
-#&gt; 48         3       10          1    2001-01-08                3
-#&gt; 49         4       10          0    2001-01-15                4
-#&gt; 50         5       10          1    2001-01-23                5
+#&gt; 47         2       10          0    2001-01-03                2
+#&gt; 48         3       10          1    2001-01-06                3
+#&gt; 49         4       10          0    2001-01-11                4
+#&gt; 50         5       10          1    2001-01-17                5
 #&gt;    res_status_before res_status_after journeyId_prev
 #&gt; 46                 0                0              0
 #&gt; 47                 0                0              0

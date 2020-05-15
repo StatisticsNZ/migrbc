@@ -280,7 +280,7 @@ Rcpp::DataFrame run_rbc_process_core(Rcpp::List &cross_data,
     IntegerVector journey_sequence = cross_data["journey_sequence"];
     IntegerVector is_arrival = cross_data["is_arrival"];
     IntegerVector journeyId_prev = cross_data["journeyId_prev"];
-    int len_journeys = journeyId.length();
+    long len_journeys = journeyId.length();
     if(len_journeys == 0) throw JourneyException();
     //// initialize extra variables
     IntegerVector residentBefore(len_journeys);
@@ -471,7 +471,7 @@ Rcpp::DataFrame run_rbc_process_with_error(Rcpp::List &cross_data,
     IntegerVector journey_sequence = cross_data["journey_sequence"];
     IntegerVector is_arrival = cross_data["is_arrival"];
     IntegerVector journeyId_prev = cross_data["journeyId_prev"];
-    int len_journeys = journeyId.length();
+    long len_journeys = journeyId.length();
     if(len_journeys == 0) throw JourneyException();
     //// initialize extra variables
     IntegerVector residentBefore(len_journeys);

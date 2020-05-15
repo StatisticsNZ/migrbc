@@ -8,14 +8,11 @@ Date str_to_date(std::string date_in_string) {
 bool is_date(std::string date_in_string){
     try{
          Date test  = Date(date_in_string, "%Y-%m-%d");
-         int year = test.getYear();
-         int month = test.getMonth();
-         int day = test.getDay();
-         if(year <1900) return (false);
-         if(month <0) return (false);
-         if(month >12) return (false);
-         if(day <0) return (false);
-         if(day >31) return (false);
+         if(test.getYear() < 1900) return (false);
+         if(test.getMonth() < 0) return (false);
+         if(test.getMonth() > 12) return (false);
+         if(test.getDay() < 0) return (false);
+         if(test.getDay() > 31) return (false);
          return(true);
     }catch(...) {
          return(false);

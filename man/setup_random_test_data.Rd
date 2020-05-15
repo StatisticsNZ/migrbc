@@ -4,7 +4,7 @@
 \alias{setup_random_test_data}
 \title{Setup Random Test Data}
 \usage{
-setup_random_test_data(num_people = 1000, initial_date = "2001-01-01",
+setup_random_test_data(num_people = 10, initial_date = "2001-01-01",
   numJourneys = 5, min = 0, max = 10)
 }
 \arguments{
@@ -26,7 +26,7 @@ A function to generate test data for RBC for toy examples.
 }
 \examples{
 
-res <- setup_random_test_data(1000, 
+res <- setup_random_test_data(10, 
                               initial_date = '2001-01-01',
                               numJourneys = 5,
                               min = 0,
