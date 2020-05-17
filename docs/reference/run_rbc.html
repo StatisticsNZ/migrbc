@@ -234,11 +234,11 @@ which journey derived the person to be a long term migrant.</p>
     <span class='kw'>max</span> <span class='kw'>=</span> <span class='fl'>100</span>)
 <span class='fu'><a href='https://rdrr.io/r/utils/head.html'>head</a></span>(<span class='no'>person_data</span>)</div><div class='output co'>#&gt;   journeyId personId is_arrival date_crossing journey_sequence
 #&gt; 1         1        1          1    2001-01-01                1
-#&gt; 2         2        1          0    2001-01-01                2
-#&gt; 3         3        1          1    2001-01-22                3
-#&gt; 4         4        1          0    2001-02-27                4
-#&gt; 5         5        1          1    2001-04-07                5
-#&gt; 6         6        1          0    2001-05-22                6
+#&gt; 2         2        1          0    2001-01-08                2
+#&gt; 3         3        1          1    2001-01-16                3
+#&gt; 4         4        1          0    2001-03-15                4
+#&gt; 5         5        1          1    2001-05-17                5
+#&gt; 6         6        1          0    2001-07-20                6
 #&gt;   res_status_before res_status_after journeyId_prev
 #&gt; 1                 0                0              0
 #&gt; 2                 0                0              0
@@ -264,32 +264,32 @@ which journey derived the person to be a long term migrant.</p>
 
 <span class='fu'><a href='https://rdrr.io/r/utils/head.html'>head</a></span>(<span class='no'>res</span>$<span class='no'>journeys</span>)</div><div class='output co'>#&gt;   journeyId journeyId_prev personId date_crossing journey_sequence
 #&gt; 1         1              0        1    2001-01-01                1
-#&gt; 2         2              1        1    2001-01-01                2
-#&gt; 3         3              2        1    2001-01-22                3
-#&gt; 4         4              3        1    2001-02-27                4
-#&gt; 5         5              4        1    2001-04-07                5
-#&gt; 6         6              5        1    2001-05-22                6
+#&gt; 2         2              1        1    2001-01-08                2
+#&gt; 3         3              2        1    2001-01-16                3
+#&gt; 4         4              3        1    2001-03-15                4
+#&gt; 5         5              4        1    2001-05-17                5
+#&gt; 6         6              5        1    2001-07-20                6
 #&gt;   days_to_next_crossing is_arrival res_status_before res_status_after
-#&gt; 1                     0          1                 0                0
-#&gt; 2                    21          0                 0                0
-#&gt; 3                    36          1                 0                0
-#&gt; 4                    39          0                 0                0
-#&gt; 5                    45          1                 0                0
-#&gt; 6                    54          0                 0                0
+#&gt; 1                     7          1                 0                0
+#&gt; 2                     8          0                 0                0
+#&gt; 3                    58          1                 0                0
+#&gt; 4                    63          0                 0                0
+#&gt; 5                    64          1                 0                0
+#&gt; 6                    71          0                 0                0
 #&gt;   is_long_term_mig date_finalised_res_before date_finalised_res_after
-#&gt; 1                0                2001-01-01               2001-09-15
-#&gt; 2                0                2001-09-15               2001-09-15
-#&gt; 3                0                2001-09-15               2001-10-06
-#&gt; 4                0                2001-10-06               2001-10-06
-#&gt; 5                0                2001-10-06               2001-11-14
-#&gt; 6                0                2001-11-14               2001-11-14
+#&gt; 1                0                2001-01-01               2001-09-09
+#&gt; 2                0                2001-09-09               2001-09-09
+#&gt; 3                0                2001-09-09               2001-09-17
+#&gt; 4                0                2001-09-17               2001-09-17
+#&gt; 5                0                2001-09-17               2002-02-01
+#&gt; 6                0                2002-02-01               2002-02-01
 #&gt;   date_finalised_LTM
-#&gt; 1         2001-09-15
-#&gt; 2         2001-01-01
-#&gt; 3         2001-10-06
-#&gt; 4         2001-02-27
-#&gt; 5         2001-11-14
-#&gt; 6         2001-05-22</div><div class='input'><span class='fu'><a href='https://rdrr.io/r/utils/head.html'>head</a></span>(<span class='no'>res</span>$<span class='no'>error_data</span>)</div><div class='output co'>#&gt;  [1] journeyId                 journeyId_prev           
+#&gt; 1         2001-09-09
+#&gt; 2         2001-01-08
+#&gt; 3         2001-09-17
+#&gt; 4         2001-03-15
+#&gt; 5         2002-02-01
+#&gt; 6         2001-07-20</div><div class='input'><span class='fu'><a href='https://rdrr.io/r/utils/head.html'>head</a></span>(<span class='no'>res</span>$<span class='no'>error_data</span>)</div><div class='output co'>#&gt;  [1] journeyId                 journeyId_prev           
 #&gt;  [3] personId                  date_crossing            
 #&gt;  [5] journey_sequence          days_to_next_crossing    
 #&gt;  [7] is_arrival                res_status_before        
